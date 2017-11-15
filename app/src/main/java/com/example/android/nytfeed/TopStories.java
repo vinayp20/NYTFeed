@@ -1,30 +1,52 @@
 package com.example.android.nytfeed;
 
+import com.google.gson.JsonArray;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TopStories {
-    public String getImageUrl() {
-        return imageUrl;
+
+    public List<Multimedia> getMultimedia() {
+        return multimedia;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setMultimedia(List<Multimedia> multimedia) {
+        this.multimedia = multimedia;
     }
 
-    public String getStoryTitle() {
-        return storyTitle;
-    }
-
-    public void setStoryTitle(String storyTitle) {
-        this.storyTitle = storyTitle;
-    }
-
+    @SerializedName("multimedia")
+    List<Multimedia> multimedia;
     @SerializedName("url")
-    String imageUrl;
-    @SerializedName("title")
-    String storyTitle;
-    public TopStories(String imageUrl, String storyTitle){
-        this.imageUrl = imageUrl;
-        this.storyTitle = storyTitle;
+    String url;
+
+    public String getUrl() {
+        return url;
     }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+//    public String getSection() {
+//        return section;
+//    }
+//
+//    public void setSection(String section) {
+//        this.section = section;
+//    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    @SerializedName("title")
+    String title;
+//    @SerializedName("section")
+//    String section;
 }
